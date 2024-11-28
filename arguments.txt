@@ -1,0 +1,18 @@
+1. task1 bez filtera 
+
+docker run --net bde -e SPARK_APPLICATION_ARGS="task1 hdfs://namenode:9000/project/emissions.csv 11.560042735839687 48.140962999972835 0.5 0 100" -p 4040:4040 --rm bde/spark-app
+
+2. task1 sa filterom 
+
+docker run --net bde -e SPARK_APPLICATION_ARGS="task1 hdfs://namenode:9000/project/emissions.csv 11.560042735839687 48.140962999972835 0.5 0 100 bus_bus" -p 4040:4040 --rm bde/spark-app
+
+3. task2 fuel
+
+docker run --net bde -e SPARK_APPLICATION_ARGS="task2 hdfs://namenode:9000/project/emissions.csv 0 100 fuel" -p 4040:4040 --rm bde/spark-app
+
+3. task2 pollution
+
+docker run --net bde -e SPARK_APPLICATION_ARGS="task2 hdfs://namenode:9000/project/emissions.csv 0 100 pollution" -p 4040:4040 --rm bde/spark-app
+
+
+
